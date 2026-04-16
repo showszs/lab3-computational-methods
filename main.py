@@ -5,6 +5,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from math import cos, sin, atan, radians, degrees
 
+import os
+
+print("Student:", os.getenv("STUDENT_NAME"))
+print("Group:", os.getenv("GROUP"))
+print("Mode:", os.getenv("MODE"))
+
 
 class MovingTargetCalculator:
     def __init__(self):
@@ -143,7 +149,8 @@ def main():
     ax4.grid(True)
 
     plt.tight_layout()
-    plt.show()
+    plt.savefig("plot.png")
+    print("Graph saved")
 
     print("\n=== ТАБЛИЦЯ РЕЗУЛЬТАТІВ ===")
     print("Швидк | Відст | Кут | Випередження | Час польоту")
